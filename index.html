@@ -95,7 +95,7 @@ em { font-family: var(--t-display); font-variation-settings: var(--t-display-sof
 .gt-work-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px 40px; }
 .gt-work-card { cursor: pointer; transition: transform .3s; }
 .gt-work-card:hover { transform: translateY(-4px); }
-.gt-work-visual { border-radius: 16px; overflow: hidden; aspect-ratio: 4/3; position: relative; margin-bottom: 24px; }
+.gt-work-visual { border-radius: 16px; overflow: hidden; aspect-ratio: 16/9; position: relative; margin-bottom: 24px; }
 .gt-work-visual-tags { position: absolute; top: 16px; left: 16px; display: flex; gap: 6px; flex-wrap: wrap; }
 .gt-full-svg { width: 100%; height: 100%; display: block; }
 .gt-work-meta h3 { font-family: var(--t-display); font-variation-settings: var(--t-display-soft); font-size: 32px; font-weight: 500; letter-spacing: -0.015em; margin-bottom: 8px; }
@@ -125,7 +125,7 @@ em { font-family: var(--t-display); font-variation-settings: var(--t-display-sof
 .gt-manifesto-eye-wrap { margin-top: 16px; display: block; }
 .gt-manifesto-punch { font-size: clamp(28px,3.5vw,54px); line-height: 1.2; color: var(--ink); font-family: var(--t-display); font-variation-settings: var(--t-display-soft); font-weight: 600; letter-spacing: -0.02em; max-width: 26ch; }
 .gt-manifesto-punch em { color: var(--accent); font-style: italic; }
-.gt-manifesto-follow { font-family: var(--t-display); font-variation-settings: var(--t-display-soft); font-size: clamp(26px,3vw,52px); font-weight: 600; letter-spacing: -0.02em; line-height: 1.12; color: var(--ink); max-width: 30ch; }
+.gt-manifesto-follow { font-family: var(--t-display); font-variation-settings: var(--t-display-soft); font-size: clamp(28px,3.5vw,54px); font-weight: 600; letter-spacing: -0.02em; line-height: 1.2; color: var(--ink); max-width: 30ch; }
 .gt-inline-logo { font-family: var(--t-display); font-variation-settings: var(--t-display-soft); color: var(--accent); font-style: normal; font-size: 0.88em; letter-spacing: -0.03em; font-weight: 700; }
 .gt-manifesto-eye-wrap { margin-top: 8px; display: block; }
 @keyframes gt-eye-blink {
@@ -150,8 +150,8 @@ em { font-family: var(--t-display); font-variation-settings: var(--t-display-sof
 @media (max-width: 640px) { .gt-why-cols { grid-template-columns: 1fr; gap: 60px; } }
 .gt-why-col-label { font-family: var(--t-mono); font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-2); margin-bottom: 28px; padding-bottom: 16px; border-bottom: 1px solid var(--hair); }
 .gt-why-can { display: flex; flex-direction: column; gap: 6px; }
-.gt-why-item { font-family: var(--t-display); font-variation-settings: var(--t-display-soft); font-size: clamp(22px,2vw,34px); font-weight: 600; letter-spacing: -0.02em; line-height: 1.15; color: var(--ink); opacity: 0; text-decoration: line-through; text-decoration-color: var(--accent); text-decoration-thickness: 2.5px; transition: opacity 0.25s; }
-.gt-why-item.gt-in { opacity: 0.45; }
+.gt-why-item { font-family: var(--t-display); font-variation-settings: var(--t-display-soft); font-size: clamp(22px,2vw,34px); font-weight: 600; letter-spacing: -0.02em; line-height: 1.15; color: var(--ink-soft); opacity: 0; text-decoration: line-through; text-decoration-color: var(--accent); text-decoration-thickness: 3px; transition: opacity 0.25s; }
+.gt-why-item.gt-in { opacity: 1; }
 .gt-why-cant { display: flex; flex-direction: column; gap: 4px; }
 .gt-why-cant-item { font-family: var(--t-display); font-variation-settings: var(--t-display-soft); font-size: clamp(30px,3.5vw,58px); font-weight: 600; letter-spacing: -0.03em; line-height: 1.1; color: var(--ink); opacity: 0; transform: translateY(10px); transition: opacity 0.6s, transform 0.6s; }
 .gt-why-cant-item.gt-in { opacity: 1; transform: none; }
@@ -480,9 +480,8 @@ const ProjectArt = ({ p }) => {
   if (p.id === 1) return (
     <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" className="gt-full-svg">
       <rect width="400" height="300" fill="#C9D4C2" />
-      {Array.from({length:9}).map((_,r) => Array.from({length:12}).map((_,c) => (
-        <circle key={`${r}-${c}`} cx={16+c*36} cy={16+r*32} r={1.5} fill="#1A1D2B" opacity={0.1} />
-      )))}
+      <line x1="340" y1="0" x2="340" y2="300" stroke="#1A1D2B" strokeWidth="1.5" opacity={0.12} />
+      <line x1="364" y1="0" x2="364" y2="300" stroke="#1A1D2B" strokeWidth="1.5" opacity={0.08} />
       <svg x="152" y="80" width="96" height="117" viewBox="0 0 46 56">
         <path d="M275.969,1041.124a3.2,3.2,0,0,0-2.035,1.383c-.518,1.011,1.694,2.219,9.076,2.057,5.012-.109,9.319-1.2,9.319-2.339,0-.551-1.013-.984-2.627-1.285a11.859,11.859,0,0,1-13.733.184Z" transform="translate(-252.619 -989.445)" fill="#bee4e5"/>
         <path d="M207.689,753.5c-.371-.752-2.09.2-2.09.2s.876-1.238.143-1.685c-.916-.558-1.755.912-1.954,1.586,0,0-.056.291-.129.646-1.5-1.3-4.51-.956-7.784-1.865A18.768,18.768,0,0,0,207.1,735.3,20.547,20.547,0,0,0,202.579,722c1.857-1.183,4.867-3.333,4.491-4.615-.462-1.573-3.585,1.258-3.585,1.258s2.031-2.606,1.313-3.5c-.863-1.07-2.824,1.51-2.824,1.51s1.648-2.512.847-3.79c-.7-1.117-2.334,3.372-3.308,6.357a17.215,17.215,0,0,0-11.653-2.7c-11.737,1.115-18.474,8.439-19.242,18.784a16.665,16.665,0,0,0,.14,3.751,11.628,11.628,0,0,0,6.343.1,6.594,6.594,0,0,1-3.459,5.436,2.527,2.527,0,0,1-.816.259,19.368,19.368,0,0,0,13.384,8.922,5.543,5.543,0,0,0-1,3.254,9.051,9.051,0,0,0,3.987,7.345,11.859,11.859,0,0,0,13.733-.185,9,9,0,0,0,3.738-7.161,4.933,4.933,0,0,0-.221-1.569C205.912,755.248,208.252,754.646,207.689,753.5Zm-25.134-13.2c-1.047,0-1.047-.709-1.047-1.584a1.512,1.512,0,0,1,1.663-1.585c.6.128.646.71.646,1.585S183.465,740.307,182.556,740.307Z" transform="translate(-163.846 -712.688)" fill="#ffb72d"/>
@@ -494,9 +493,8 @@ const ProjectArt = ({ p }) => {
   if (p.id === 2) return (
     <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" className="gt-full-svg">
       <rect width="400" height="300" fill="#EDE5D8" />
-      {Array.from({length:9}).map((_,r) => Array.from({length:12}).map((_,c) => (
-        <circle key={`${r}-${c}`} cx={16+c*36} cy={16+r*32} r={1.8} fill="#100914" opacity={0.1} />
-      )))}
+      <line x1="340" y1="0" x2="340" y2="300" stroke="#100914" strokeWidth="1.5" opacity={0.12} />
+      <line x1="364" y1="0" x2="364" y2="300" stroke="#100914" strokeWidth="1.5" opacity={0.08} />
       <svg x="30" y="86" width="340" height="128" viewBox="0 0 399 150">
         <path d="M370.525 105.12V129.328H358.961V84.9046H369.61V91.227C372.854 86.818 377.43 84.0727 383.253 84.0727C392.154 84.0727 398.31 89.896 398.31 100.627V129.328H386.83V104.537C386.83 97.9654 384.251 94.305 379.01 94.305C374.435 94.305 370.525 97.9654 370.525 105.12Z" fill="#100914"/>
         <path d="M339.596 129.328V123.837C336.685 127.997 332.276 130.16 326.203 130.16C316.969 130.16 310.813 124.753 310.813 116.434C310.813 107.782 317.801 103.123 330.778 103.123C333.274 103.123 335.437 103.29 338.182 103.622V100.96C338.182 95.9688 335.354 93.0572 330.529 93.0572C325.537 93.0572 322.543 95.9688 322.127 100.96H311.728C312.393 90.7279 319.797 84.0727 330.529 84.0727C342.175 84.0727 348.997 90.4783 348.997 101.376V129.328H339.596ZM321.711 116.101C321.711 119.844 324.373 122.174 328.699 122.174C334.605 122.174 338.182 118.929 338.182 113.771V110.61C335.437 110.194 333.524 110.028 331.527 110.028C324.955 110.028 321.711 112.108 321.711 116.101Z" fill="#100914"/>
@@ -766,13 +764,7 @@ const HomePage = ({ setPage }) => {
       <PromiseBlock />
 
       <section className="gt-section gt-works" id="gt-works">
-        <div className="gt-section-top">
-          <span className="gt-eyebrow">Selected works</span>
-        </div>
-        <h2 className="gt-big">
-          Organisations thrive by forging <em>deeper</em> connections with their audience. What we make matters —{' '}
-          <span className="gt-underline">what we make possible</span> matters more.
-        </h2>
+        <h2 className="gt-big" style={{fontWeight:700}}>But the proof of the pudding is in the eating, right? Here&rsquo;s what that looks like in practice.</h2>
         <div className="gt-work-grid">
           {projects.map((p,i) => (
             <Reveal key={p.id} delay={(i%2)*100}>
